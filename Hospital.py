@@ -30,3 +30,19 @@ class HospitalSystem:
             print("[Info] No patients in the queue.")
             return None
         return self.queue[0]
+    
+    def show_all_patients(self):
+        """ Returns all patients in the queue """
+        return self.queue
+    
+    def find_patient(self, patient_id):
+        """
+        Returns a specific patient's details using a hash map lookup.
+        """
+        patient = self.records.get(patient_id)
+        if patient:
+            print(f"[Found] {patient}")
+            return patient
+        else:
+            print(f"[Not Found] No patient with ID: {patient_id}")
+            return None

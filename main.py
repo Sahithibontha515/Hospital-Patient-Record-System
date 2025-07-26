@@ -21,3 +21,6 @@ print()
 print("Show all Patients:")
 for patient in hospital.show_all_patients():
     print(patient)
+
+
+print("Patient with id ",hospital.find_patient(101))
