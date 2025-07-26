@@ -16,26 +16,9 @@ class Patient:
         return (self.priority.value, self.admission_time) < (other.priority.value, other.admission_time)
 
     def __repr__(self):
-        return f"{self.name} (Priority: {self.priority.name}, ID: {self.patient_id})"
+        return f"{self.name} (Priority: {self.priority.name}, ID: {self.patient_id}), Condition: {self.condition.name}"
     
 
-# Patient Priority
-class PatientPriority(Enum):
-    CRITICAL = 1
-    HIGH = 2
-    MEDIUM = 3
-    LOW = 4
-
-# Patient Condition
-class ConditionType(Enum):
-    CARDIAC = "Cardiac Emergency"
-    RESPIRATORY = "Respiratory Issue"
-    FRACTURE = "Bone Fracture"
-    TRAUMA = "Physical Trauma"
-    FEVER = "High Fever"
-    BURN = "Burn Injury"
-    ALLERGIC_REACTION = "Allergic Reaction"
-    OTHER = "Other"
 
 
     
