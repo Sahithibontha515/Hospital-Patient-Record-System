@@ -13,6 +13,20 @@ class HospitalSystem:
         heapq.heappush(self.queue, patient)
         self.records[patient.patient_id] = patient
         print(f"[Admitted] {patient}")
+    
+    def discharge_patient(self, patient_id):
+        if patient_id in self.records:
+            patient_to_remove = self.records[patient_id]
+            # Remove from hash map
+            del self.records[patient_id]
+
+            # Remove from priority queue by rebuilding it
+            self.queue = [patient for patient in self.queue if patient.patient_id != patient_id]
+            heapq.heapify(self.queue)  # Re-heapify after removal
+
+            print(f"[Discharged] {patient_to_remove}")
+        else:
+            print(f"[Not Found] No patient with ID {patient_id} to discharge.")
 
     def get_patient_with_max_severity(self):
         """ Removes and returns the patient with the highest severity. """
