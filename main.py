@@ -1,6 +1,9 @@
 from Hospital import HospitalSystem
 from Patient import Patient
 from HRSEnums import PatientPriority , ConditionType
+import time
+import random
+from datetime import datetime, timedelta
 
 hospital = HospitalSystem()
 
@@ -30,3 +33,5 @@ hospital.discharge_patient(101)
 hospital.find_patient(101)
 
 print("[Max Severity]:", hospital.show_patient_with_max_severity())
+
+
